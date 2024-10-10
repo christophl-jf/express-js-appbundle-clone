@@ -59,8 +59,8 @@ jobs:
           JF_URL: https://${{ vars.JF_URL }}/
           JF_PROJECT: ${{ vars.JF_PROJECT }}
         with:
-            oidc-provider-name: carminea-github
-            oidc-audience: carminea-audience
+            oidc-provider-name: christophl-github
+            oidc-audience: christophl-audience
       
       - name: NPM Audit 
         run: |
