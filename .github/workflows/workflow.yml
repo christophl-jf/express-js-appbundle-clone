@@ -1,8 +1,5 @@
 name: "github-ejs-build"
 on:
-  # Runs on pushes targeting the default branch
-  push:
- 
   workflow_dispatch:
     inputs:
       rt_npm_remote_repo_id:
