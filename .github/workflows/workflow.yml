@@ -1,5 +1,8 @@
 name: "github-ejs-build"
-on: 
+on:
+  # Runs on pushes targeting the default branch
+  push:
+ 
   workflow_dispatch:
     inputs:
       rt_npm_remote_repo_id:
@@ -10,7 +13,7 @@ on:
       rt_docker_repo:
         required: true
         type: string
-        default: "christophl-docker-virtual"
+        default: "christophl-docker-dev"
         description: "Artifactory Docker repository"
       docker_image_name:
         required: true
