@@ -61,6 +61,7 @@ jobs:
         with:
             oidc-provider-name: christophl-github
             oidc-audience: christophl-audience
+            disable-auto-build-publish: false
       
       - name: NPM Audit 
         run: |
@@ -92,7 +93,7 @@ jobs:
       - name: Docker scan
         run: |
           jf docker pull ${{ vars.JF_URL }}/${{ env.DOCKER_REPO }}/${{ env.IMAGE_NAME }}:${{ github.run_number }}
-          jf docker scan ${{ vars.JF_URL }}/${{ env.DOCKER_REPO }}/${{ env.IMAGE_NAME }}:${{ github.run_number }}
+#          jf docker scan ${{ vars.JF_URL }}/${{ env.DOCKER_REPO }}/${{ env.IMAGE_NAME }}:${{ github.run_number }}
       
       - name: Docker Add Package to Build
         run: |  
