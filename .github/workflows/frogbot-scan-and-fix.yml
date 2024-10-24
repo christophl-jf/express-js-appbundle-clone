@@ -35,9 +35,9 @@ jobs:
 
       - uses: jfrog/frogbot@v2
         with:
-          oidc-provider-name: carminea-github
-          oidc-audience: carminea-audience
-        env:
+          oidc-provider-name: christophl-github
+          oidc-audience: christophl-audience
+      env:
           # [Mandatory]
           # JFrog platform URL
           JF_URL: https://${{ vars.JF_URL }}/
