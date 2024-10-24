@@ -37,7 +37,7 @@ jobs:
         with:
           oidc-provider-name: christophl-github
           oidc-audience: christophl-audience
-      env:
+        env:
           # [Mandatory]
           # JFrog platform URL
           JF_URL: https://${{ vars.JF_URL }}/
