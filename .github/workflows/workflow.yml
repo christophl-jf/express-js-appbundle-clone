@@ -114,5 +114,5 @@ jobs:
       
       - name: Build Scan
         run: |            
-          jf build-scan 
+          jf build-scan --project ${{ vars.JF_PROJECT }}
           # --vuln true
