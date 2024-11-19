@@ -71,7 +71,7 @@ jobs:
       
       - name: NPM Audit 
         run: |
-          jf npmc --repo-resolve ${{ github.event.inputs.rt_npm_remote_repo_id }} --repo-deploy ${{ github.event.inputs.rt_npm_local_repo_id }}
+          jf npmc --repo-resolve ${{ github.event.inputs.rt_npm_remote_repo_id }}
           jf npm i --omit dev
           
           if [ ${{ github.event.inputs.xr_enable_scan }} == 'true' ]; then
@@ -80,6 +80,8 @@ jobs:
           else
           	echo "Skip Xray scanning!!!"
           fi
+          # Finally publish
+          jf npmc --repo-resolve ${{ github.event.inputs.rt_npm_remote_repo_id }} --repo-deploy ${{ github.event.inputs.rt_npm_local_repo_id }}
           jf npm publish
       - name: Docker Authenticate
         uses: docker/login-action@v3
