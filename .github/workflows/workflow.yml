@@ -114,5 +114,5 @@ jobs:
       
       - name: Build Scan
         run: |            
-          jf build-scan --project ${{ vars.JF_PROJECT }}
+          jf build-scan --watches chrisley-critical,chrisley-gplv3,chrisley-malicious,chrisley-opris,chrisley-oprisk
           # --vuln true
