@@ -112,6 +112,6 @@ jobs:
           jf rt build-add-git
           jf rt build-publish
       
-      # - name: Build Scan
-      #   run: |            
-      #     jf build-scan --vuln true
+      - name: Build Scan
+        run: |            
+          jf build-scan --vuln true
