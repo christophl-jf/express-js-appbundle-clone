@@ -114,5 +114,4 @@ jobs:
       
       - name: Build Scan
         run: |            
-          jf build-scan --watches chrisley-critical,chrisley-gplv3,chrisley-malicious,chrisley-opris,chrisley-oprisk
-          # --vuln true
+          jf build-scan --vuln true
