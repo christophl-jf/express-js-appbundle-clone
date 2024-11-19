@@ -6,12 +6,12 @@ on:
         required: true
         type: string
         default: "chrisley-npm-virtual-dev"
-        description: "Artifactory Repository Name"
-        rt_npm_local_repo_id:
+        description: "Artifactory Resolve Repository Name"
+      rt_npm_local_repo_id:
           required: true
           type: string
           default: "chrisley-npm-local-dev"
-          description: "Artifactory Repository Name"
+          description: "Artifactory Deploy Repository Name"
       rt_docker_repo:
         required: true
         type: string
