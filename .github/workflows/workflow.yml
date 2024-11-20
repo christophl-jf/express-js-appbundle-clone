@@ -96,11 +96,11 @@ jobs:
           tags: ${{ vars.JF_URL }}/${{ env.DOCKER_REPO }}/${{ env.IMAGE_NAME }}:${{ github.run_number }}
           provenance: false
       
-      - name: Docker scan
+            - name: Docker scan
         run: |
           jf docker pull ${{ vars.JF_URL }}/${{ env.DOCKER_REPO }}/${{ env.IMAGE_NAME }}:${{ github.run_number }}
-          jf docker scan ${{ vars.JF_URL }}/${{ env.DOCKER_REPO }}/${{ env.IMAGE_NAME }}:${{ github.run_number }} --threads 9 --watches chrisley-critical,chrisley-gplv3,chrisley-malicious,chrisley-opris,chrisley-oprisk
-      
+          jf docker scan ${{ vars.JF_URL }}/${{ env.DOCKER_REPO }}/${{ env.IMAGE_NAME }}:${{ github.run_number }} --threads 9 
+
       - name: Docker Add Package to Build
         run: |  
            echo "${{ vars.JF_URL }}/${{ env.DOCKER_REPO }}/${{ env.IMAGE_NAME }}:${{ github.run_number }}@${{ steps.build.outputs.digest }}" > metadata.json
