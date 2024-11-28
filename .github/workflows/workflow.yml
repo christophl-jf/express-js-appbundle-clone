@@ -114,5 +114,5 @@ jobs:
       
       - name: Build Scan
         run: |            
-          jf build-scan --vuln true
+          jf build-scan --vuln true --rescan true
         
