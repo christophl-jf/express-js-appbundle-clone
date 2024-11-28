@@ -114,4 +114,5 @@ jobs:
       
       - name: Build Scan
         run: |            
-          jf build-scan --vuln true --project ${{ vars.JF_PROJECT }} ${{ env.JFROG_CLI_BUILD_NAME }}  ${{ env.JFROG_CLI_BUILD_NUMBER }}
+          jf build-scan --vuln true
+        
