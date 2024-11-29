@@ -110,7 +110,7 @@ jobs:
         run: |
           jf rt build-collect-env
           jf rt build-add-git
-          #jf rt build-publish
+          jf rt build-publish
       
       - name: Build Scan
         run: |            
