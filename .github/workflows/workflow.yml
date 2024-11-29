@@ -114,5 +114,5 @@ jobs:
       
       - name: Build Scan
         run: |            
-          jf build-scan --vuln=true --fail=false --rescan=true --project=${{ vars.JF_PROJECT }} ${{ env.JF_BUILD_NAME }} ${{ env.JF_BUILD_NUMBER }}
+          jf build-scan --vuln=true --fail=true --rescan=true --project=${{ vars.JF_PROJECT }} ${{ env.JF_BUILD_NAME }} ${{ env.JF_BUILD_NUMBER }}
         
