@@ -54,3 +54,9 @@ open a terminal and run
 `nc -lv 1337`
 
 Then use the link in the application to open the web shell.
+
+3 - The showcase maliscious package detection, please add this line
+
+`    "cors.js": "0.0.1-security",`
+
+in the "dependencies" section.
