@@ -118,5 +118,5 @@ jobs:
 
       - name: Release Bundle Create
         run: |            
-          jf rbc --signing-key="chrisley-rb" ${{ env.JF_BUILD_NAME }} 0.1-${{ env.JF_BUILD_NUMBER }}
+          jf rbc --signing-key=chrisley-rb ${{ env.JF_BUILD_NAME }} 0.1-${{ env.JF_BUILD_NUMBER }}
    
