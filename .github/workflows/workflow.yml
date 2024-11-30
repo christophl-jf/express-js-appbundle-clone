@@ -118,5 +118,5 @@ jobs:
 
       - name: Release Bundle Create
         run: |            
-          jf rbc --signing-key=chrisley-rb ${{ env.JFROG_CLI_BUILD_NAME }} 0.1-${{ env.JFROG_CLI_BUILD_NUMBER }}
+          jf rbc --spec=./build.info --signing-key=jfrog-christophl-rb ${{ env.JFROG_CLI_BUILD_NAME }} 0.1-${{ env.JFROG_CLI_BUILD_NUMBER }}
    
