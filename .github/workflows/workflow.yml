@@ -114,9 +114,9 @@ jobs:
       
       - name: Build Scan
         run: |            
-          jf build-scan --vuln=true --fail=false --project=${{ vars.JF_PROJECT }} ${{ env.JF_BUILD_NAME }} ${{ env.JF_BUILD_NUMBER }}
+          jf build-scan --vuln=true --fail=false --project=${{ vars.JF_PROJECT }}
 
       - name: Release Bundle Create
         run: |            
-          jf rbc --signing-key=chrisley-rb ${{ env.JF_BUILD_NAME }} 0.1-${{ env.JF_BUILD_NUMBER }}
+          jf rbc --signing-key=chrisley-rb ${{ env.JFROG_CLI_BUILD_NAME }} 0.1-${{ env.JFROG_CLI_BUILD_NUMBER }}
    
