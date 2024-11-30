@@ -116,7 +116,8 @@ jobs:
         run: |            
           jf build-scan --vuln=true --fail=false --project=${{ vars.JF_PROJECT }}
 
-      - name: Release Bundle Create
+      - name: Release Bundle Create and promote to DEV  
         run: |            
           jf rbc --spec=./build.info --signing-key=jfrog-christophl-rb ${{ env.JFROG_CLI_BUILD_NAME }} 0.1-${{ env.JFROG_CLI_BUILD_NUMBER }}
+          jf rbp --signing-key=jfrog-christophl-rb ${{ env.JFROG_CLI_BUILD_NAME }} 0.1-${{ env.JFROG_CLI_BUILD_NUMBER }} DEV
    
