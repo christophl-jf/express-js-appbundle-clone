@@ -23,7 +23,7 @@ on:
         default: "ejs"
         description: "Docker Image name"
       xr_enable_scan:
-        required: true
+        required: false
         type: string
         default: "true"
         description: "Scan with Xray"
