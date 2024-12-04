@@ -74,6 +74,7 @@ jobs:
       #     jf curation-audit
       - name: NPM Audit 
         run: |
+          jf npm version 1.0.${{ env.JFROG_CLI_BUILD_NUMBER }}
           jf npmc --repo-resolve ${{ github.event.inputs.rt_npm_remote_repo_id }} --repo-deploy ${{ github.event.inputs.rt_npm_local_repo_id }}
           jf npm i --omit dev
           
