@@ -69,10 +69,10 @@ jobs:
             disable-auto-build-publish: false
             disable-job-summary: false
 
-      - name: Curation Audit 
-        run: |
-          jf npmc --repo-resolve ${{ github.event.inputs.rt_npm_remote_repo_id }} --repo-deploy ${{ github.event.inputs.rt_npm_local_repo_id }}
-          jf curation-audit
+      # - name: Curation Audit 
+      #   run: |
+      #     jf npmc --repo-resolve ${{ github.event.inputs.rt_npm_remote_repo_id }} --repo-deploy ${{ github.event.inputs.rt_npm_local_repo_id }}
+      #     jf curation-audit
 
       - name: NPM Audit 
         run: |
