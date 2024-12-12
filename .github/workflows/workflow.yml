@@ -68,16 +68,17 @@ jobs:
             oidc-audience: christophl-audience
             disable-auto-build-publish: false
             disable-job-summary: false
-      - name: Curation Audit 
-        run: |
-          jf npmc --repo-resolve ${{ github.event.inputs.rt_npm_remote_repo_id }} --repo-deploy ${{ github.event.inputs.rt_npm_local_repo_id }}
-          jf curation-audit
+
+      # - name: Curation Audit 
+      #   run: |
+      #     jf npmc --repo-resolve ${{ github.event.inputs.rt_npm_remote_repo_id }} --repo-deploy ${{ github.event.inputs.rt_npm_local_repo_id }}
+      #     jf curation-audit
+
       - name: NPM Audit 
         run: |
           jf npmc --repo-resolve ${{ github.event.inputs.rt_npm_remote_repo_id }} --repo-deploy ${{ github.event.inputs.rt_npm_local_repo_id }}
           jf npm version 1.0.${{ env.JFROG_CLI_BUILD_NUMBER }} --git-tag-version false
-          jf npm i --omit dev
-          
+          jf npm i --omit dev          
           if [ ${{ github.event.inputs.xr_enable_scan }} == 'true' ]; then
           	echo "Execute Xray scanning ..."
           	jf audit --npm --fail=${{ github.event.inputs.xr_override_fail_build }} --project  ${{ vars.JF_PROJECT }}            
@@ -85,6 +86,7 @@ jobs:
           	echo "Skip Xray scanning!!!"
           fi
           jf npm publish
+
       - name: Docker Authenticate
         uses: docker/login-action@v3
         with:
@@ -103,7 +105,7 @@ jobs:
       - name: Docker scan
         run: |
           jf docker pull ${{ vars.JF_URL }}/${{ env.DOCKER_REPO }}/${{ env.IMAGE_NAME }}:${{ github.run_number }}
-          jf docker scan ${{ vars.JF_URL }}/${{ env.DOCKER_REPO }}/${{ env.IMAGE_NAME }}:${{ github.run_number }} --fail=false --vuln=true
+          jf docker scan ${{ vars.JF_URL }}/${{ env.DOCKER_REPO }}/${{ env.IMAGE_NAME }}:${{ github.run_number }} --fail=true --vuln
 
       - name: Docker Add Package to Build
         run: |  
