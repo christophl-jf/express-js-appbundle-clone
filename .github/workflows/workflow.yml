@@ -48,10 +48,6 @@ jobs:
     steps:
       - name: Print Inputs
         run: echo "${{ toJSON(github.event.inputs) }}"
-      - name: ⚙️ Upgrade package
-        run: |
-          sudo apt-get update
-          sudo apt-get upgrade
       - name: Checkout
         uses: actions/checkout@v4
       - name: Set up Docker Buildx
