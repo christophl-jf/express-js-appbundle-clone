@@ -78,6 +78,7 @@ jobs:
           export JFROG_CLI_LOG_LEVEL="DEBUG"
           jf npmc --repo-resolve ${{ github.event.inputs.rt_npm_remote_repo_id }} --repo-deploy ${{ github.event.inputs.rt_npm_local_repo_id }}
           jf npm cache clean --force
+          npm i --omit dev
           jf npm version 1.0.${{ env.JFROG_CLI_BUILD_NUMBER }} --git-tag-version false
           jf npm i --omit dev --loglevel verbose         
           if [ ${{ github.event.inputs.xr_enable_scan }} == 'true' ]; then
