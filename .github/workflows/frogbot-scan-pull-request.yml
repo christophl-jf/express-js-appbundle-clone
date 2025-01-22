@@ -28,6 +28,7 @@ jobs:
           oidc-provider-name: christophl-github
           oidc-audience: christophl-audience
         env:
+          JFROG_CLI_LOG_LEVEL: "DEBUG"
           # [Mandatory]
           # JFrog platform URL
           JF_URL: https://${{ vars.JF_URL }}/
