@@ -71,7 +71,7 @@ jobs:
         run: |
           jf npmc --repo-resolve ${{ github.event.inputs.rt_npm_remote_repo_id }} --repo-deploy ${{ github.event.inputs.rt_npm_local_repo_id }}
           npm i --omit dev
-          jf curation-audit
+          jf curation-audit | grep "Policy violations" && exit 3
       - name: NPM Audit 
         run: |
           # export JFROG_CLI_LOG_LEVEL="DEBUG"
